@@ -36,25 +36,36 @@ class ROIcalculator():
         self.expenses = expenses
         self.investment = investment
 
+    def income(self):
+        self.income = int(input("\n* Enter property's TOTAL monthly income as a number: \n"))
+        return self.income
+
+    def expenses(self):
+        self.expenses = int(input("\n* Enter property's monthly expenses as a number: \n"))
+        return self.expenses
+
+    def investment(self):
+        self.investment = int(input("\n* Enter TOTAL investment required for you to acquire this property: \n"))
+        return self.investment
+
     def cashflow(self):
         self.cashflow = (self.income * 12) - (self.expenses * 12)
-        print(round(self.cashflow, 2))
+        print(f"\n* This property's expected annual cashflow: ${round(self.cashflow, 2)}.\n")
     
     def roi(self):
         self.roi = self.cashflow / self.investment * 100
-        print(round(self.roi, 2))
+        print(f"\n* This property's expected Return on Investment: {round(self.roi, 2)}%.\n")
 
-income = int(input("Enter property's TOTAL monthly income as a number: \n"))
-expenses = int(input("Enter property's monthly expenses as a number: \n"))
-investment = int(input("Enter TOTAL investment required for you to acquire this property: \n"))
+def calculate():
+    a_property = ROIcalculator()
+    while True:
+        start = input("\n* Enter 'start' to get started: \n")
+        if start.lower() == 'start':
+            a_property.income()
+            a_property.expenses()
+            a_property.investment()
+            a_property.cashflow()
+            a_property.roi()
+            break
 
-a_property = ROIcalculator()
-
-while True:
-    if income <= 0:
-        print("Obsiouly a bad investment! Let's try another one.\n")
-    elif income > 0 and expenses > income:
-        print("Obsiouly a bad investment! Let's try another one.\n")
-    else:
-        print(a_property.cashflow())
-        print(a_property.roi())
+calculate()
