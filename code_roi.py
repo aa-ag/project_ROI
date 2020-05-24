@@ -59,13 +59,17 @@ class ROIcalculator():
 def calculate():
     a_property = ROIcalculator()
     while True:
-        start = input("\n* Enter 'start' to get started: \n")
+        start = input("\n* Enter 'start' to get started or 'quit' to leave: \n")
         if start.lower() == 'start':
             a_property.income()
             a_property.expenses()
             a_property.investment()
             a_property.cashflow()
-            a_property.roi()
+            a_property.roi() 
+            break
+        elif start.lower() != 'start' and start.lower() == 'quit':
+            print("\n *Thanks for stopping by!\n")
             break
 
 calculate()
+
