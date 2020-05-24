@@ -1,0 +1,7 @@
+income = int(input("* Enter monthly expected TOTAL income for this property: \n"))
+expenses = int(input("* Enter monthly expected TOTAL expenses for this property: \n"))
+investment = int(input("* How much will you invest in TOTAL to buy this property? \n"))
+annual_cashflow = (income * 12) - (expenses - 12)
+tell_cashflow = print(f"Expected annual cashflow for this property: {annual_cashflow}\n")
+roi = round((annual_cashflow / investment) * 100, 2)
+tell_roi = print(f"Expected Return on Investment: {roi}%")
