@@ -55,18 +55,18 @@ class ROIcalculator():
             self.investment = float(input("\n* Enter TOTAL investment required for you to acquire this property: \n"))
             return self.investment
         except Exception:
-            print("*** Uh-oh! Dunno what that means... please enter a number.")
+            print("\n*** Uh-oh! Dunno what that means... please enter a number.")
 
     def cashflow(self):
         self.cashflow = (self.income * 12) - (self.expenses * 12)
         if self.cashflow <= 0:
-            print("\n* Seems like expected expenses are higher than or equal to the expected income: not a good investment!\n")
+            print("\n* STEER CLEAR: Seems like expected expenses are higher than or equal to the expected income.\n")
         else:
-            print(f"\n* This property's expected annual cashflow: ${round(self.cashflow, 2)}.\n")
+            print(f"* This property's expected annual cashflow: ${round(self.cashflow, 2)}.\n")
     
     def roi(self):
         self.roi = self.cashflow / self.investment * 100
-        print(f"\n* This property's expected Return on Investment: {round(self.roi, 2)}%.\n")
+        print(f"* This property's expected Return on Investment: {round(self.roi, 2)}%.\n")
 
 def calculate():
     a_property = ROIcalculator()
