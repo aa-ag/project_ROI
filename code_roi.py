@@ -37,16 +37,25 @@ class ROIcalculator():
         self.investment = investment
 
     def income(self):
-        self.income = float(input("\n* Enter property's TOTAL monthly income as a number: \n"))
-        return self.income
+        try:
+            self.income = float(input("\n* Enter property's TOTAL monthly income as a number: \n"))
+            return self.income
+        except Exception:
+            print("*** Uh-oh! Dunno what that means... please enter a number.")
 
     def expenses(self):
-        self.expenses = float(input("\n* Enter property's monthly expenses as a number: \n"))
-        return self.expenses
+        try:
+            self.expenses = float(input("\n* Enter property's monthly expenses as a number: \n"))
+            return self.expenses
+        except Exception:
+            print("*** Uh-oh! Dunno what that means... please enter a number.")
 
     def investment(self):
-        self.investment = float(input("\n* Enter TOTAL investment required for you to acquire this property: \n"))
-        return self.investment
+        try:
+            self.investment = float(input("\n* Enter TOTAL investment required for you to acquire this property: \n"))
+            return self.investment
+        except Exception:
+            print("*** Uh-oh! Dunno what that means... please enter a number.")
 
     def cashflow(self):
         self.cashflow = (self.income * 12) - (self.expenses * 12)
@@ -76,4 +85,3 @@ def calculate():
             break
 
 calculate()
-
