@@ -1,4 +1,4 @@
-#ROI Calculator
+# ROI Calculator
 
 * Friday EOD: started with OOP -- it would not work.
 * Saturday: scratched what I had, and converted into LinkedList. That also would not work. By EOD, scratched that as well
